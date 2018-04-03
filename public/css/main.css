@@ -1,0 +1,51 @@
+body
+{
+	background-color: #82ccdd;
+}
+h1,h2{
+	text-align: center;
+}
+.title{
+	margin: 10px;
+}
+nav{
+	background-color: #60a3bc;
+}
+img{
+	max-height: 50px;
+}
+footer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 0px;
+	height: 100px;
+	width: 100%;
+	background-color: #60a3bc;
+	text-align: center;
+	margin-top: 20px;
+
+}
+p{
+	margin-bottom: 0px;
+}
+section{
+	display: flex;
+	flex-wrap: wrap;
+}
+article{
+	margin: 10px;
+}
+.lorem{
+	background-color: #60a3bc;
+	width: 80%;
+	margin: auto;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.dropdown-menu{
+	background-color: #82ccdd;
+}
