@@ -2,6 +2,10 @@ body
 {
 	background-color: #82ccdd;
 }
+header{
+	position: sticky;
+	top: 0px;
+}
 h1,h2{
 	text-align: center;
 }
@@ -11,14 +15,25 @@ h1,h2{
 nav{
 	background-color: #60a3bc;
 }
+a{
+	transition: transform .2s;
+}
+a:hover{
+	border-radius: 5px;
+	color: white;
+	background-color: #82ccdd;
+	-ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+}
 img{
 	max-height: 50px;
 }
 footer{
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	position: absolute;
+	justify-content: space-around;
+	position: sticky;
 	bottom: 0px;
 	height: 100px;
 	width: 100%;
