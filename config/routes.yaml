@@ -5,3 +5,7 @@
 homepage:
     path: /
     controller: App\Controller\DefaultController::homepage
+    
+add_product:
+    path: /add/product
+    controller: App\Controller\ProductController::addProduct

@@ -33,7 +33,7 @@ footer{
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	position: sticky;
+	position: fixed;
 	bottom: 0px;
 	height: 100px;
 	width: 100%;
