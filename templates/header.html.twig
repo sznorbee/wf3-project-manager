@@ -34,3 +34,12 @@
       </div>
 	</nav>
 </header>
+
+{% set infoMessage = app.flashes('info') %}
+{% if infoMessage is not empty %}
+<div class="container">
+	{% for message in infoMessage %}
+		<p class="bg-success p-1">{{ message }}</p>
+	{% endfor %}
+</div>
+{% endif %}
