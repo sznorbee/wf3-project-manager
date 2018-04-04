@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
@@ -13,11 +15,13 @@ class Product
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * 
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -28,6 +32,11 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex(
+     *  pattern="#^\d+\.\d+\.\d+$#",
+     *  message="The version must follow the pattern X.X.X"
+     * )
+     * 
      */
     private $version;
 
