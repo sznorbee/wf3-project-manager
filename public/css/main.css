@@ -5,9 +5,12 @@ body
 header{
 	position: sticky;
 	top: 0px;
+	box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.5);
 }
-h1,h2{
+h1,h2, h3{
 	text-align: center;
+	margin: 10px;
+	text-shadow: 5px 5px 10px black;
 }
 .title{
 	margin: 10px;
@@ -25,6 +28,7 @@ a:hover{
 	-ms-transform: scale(1.05); /* IE 9 */
     -webkit-transform: scale(1.05); /* Safari 3-8 */
     transform: scale(1.05);
+	box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.5);
 }
 img{
 	max-height: 50px;
@@ -40,6 +44,7 @@ footer{
 	background-color: #60a3bc;
 	text-align: center;
 	margin-top: 20px;
+	box-shadow: 0px -10px 10px 0px rgba(0,0,0,0.5);
 
 }
 p{
