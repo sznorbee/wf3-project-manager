@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{parent()}}-Register
+{% endblock %}
+
+{% block body %}
+	<h1>Register</h1>
+	{{ form(registerUserFormular) }}
+{% endblock %}

@@ -3,9 +3,24 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Ramsey\Uuid\Uuid;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity
+ * (
+ *     fields={"username"},
+ *     errorPath="username",
+ *     message="This name is already in use!"
+ * )
+ * @UniqueEntity
+ * (
+ *     fields={"email"},
+ *     errorPath="email",
+ *     message="This email is already in use!"
+ * )
  */
 class User
 {
@@ -18,34 +33,54 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email()
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex
+     * (
+     *  pattern="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-,]).{8,}$/",
+     *  message="The password must follow: minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"
+     *  )
      */
     private $password;
 
     /**
-     * @ORM\Column(type="boolean", options={"default":"0"})
+     * @ORM\Column(type="boolean" )
+     * 
      */
-    private $active;
+    private $active = false;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $emailToken;
+    
+    public function __construct()
+    {
+        $this->setEmailToken(Uuid::uuid1());
+    }
+    
     public function getId()
     {
         return $this->id;
@@ -119,6 +154,18 @@ class User
     public function setActive(bool $active): self
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    public function getEmailToken(): ?string
+    {
+        return $this->emailToken;
+    }
+
+    public function setEmailToken(?string $emailToken): self
+    {
+        $this->emailToken = $emailToken;
 
         return $this;
     }

@@ -1,0 +1,8 @@
+<p>Hello {{ user.getUsername() }}</p>
+<p>
+	Please click on the following link, to confirm your email addresse!
+</p>
+
+<a href="{{ absolute_url(path('activate_user', {'token':user.getEmailToken})) }}">
+	{{ absolute_url(path('activate_user', {'token':user.getEmailToken})) }}
+</a>

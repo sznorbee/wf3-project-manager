@@ -9,3 +9,11 @@ homepage:
 add_product:
     path: /add/product
     controller: App\Controller\ProductController::addProduct
+    
+register_user:
+    path: /register/user
+    controller: App\Controller\UserController::registerUser
+
+activate_user:
+    path: /user/activate/{token}
+    controller: App\Controller\UserController::activateUser

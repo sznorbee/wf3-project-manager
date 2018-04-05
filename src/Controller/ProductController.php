@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class ProductController
 {
@@ -21,7 +22,8 @@ class ProductController
                                FormFactoryInterface $factory,
                                Request $request,
                                ObjectManager $manager,
-                               SessionInterface $session
+                               SessionInterface $session,
+                               UrlGeneratorInterface $urlGenerator
                               )
     {
         $product = new Product();
@@ -47,7 +49,7 @@ class ProductController
            
            $session->getFlashBag()->add('info', 'Ok, Project is created!');
            
-           return new RedirectResponse('/');
+           return new RedirectResponse($urlGenerator->generate('homepage'));
         }
         
         return new Response
