@@ -76,3 +76,20 @@ article{
 	margin: auto;
 	width: 80%;
 }
+.infoMessage{
+	display: flex;
+	background-color: white;
+	text-align: center;
+	width: 60%;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+.infoMessage p{
+	color: #82ccdd;
+	font-size: 2rem;
+	font-weight: bold;
+	align-items: center;
+	padding: 10px;
+
+}
