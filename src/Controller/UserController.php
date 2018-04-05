@@ -17,6 +17,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Doctrine\Common\Persistence\ObjectManagerDecorator;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class UserController
 {
@@ -89,9 +91,33 @@ class UserController
                   );
     }
 
-    public function activateUser()
+    public function activateUser
+                        (
+                            $token,
+                            ObjectManager $manager,
+                            UrlGeneratorInterface $urlGenerator,
+                            SessionInterface $session
+                         )
     {
-        return new Response('Hello it is ok');
+        $userRepository = $manager->getRepository(User::class);
+        $user = $userRepository->findOneByEmailToken($token);
+        
+        if (!$user)
+        {
+            throw new NotFoundHttpException('User is not exist, please register first');    
+        }
+        $user->setActive(true)
+        ->setEmailToken(null);
+        
+        $manager->flush();
+        $session->getFlashBag()
+                ->add('info', 'Ok, your email is confirmed!');
+        
+        return new RedirectResponse
+                    (
+                       $urlGenerator->generate('homepage')
+                     );
+            
     }
 }
 

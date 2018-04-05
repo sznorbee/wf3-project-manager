@@ -17,3 +17,5 @@ register_user:
 activate_user:
     path: /user/activate/{token}
     controller: App\Controller\UserController::activateUser
+    requirements:
+       token: '[a-z0-9-]+'
