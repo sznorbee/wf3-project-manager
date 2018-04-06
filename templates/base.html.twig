@@ -13,8 +13,11 @@
     	    {% include 'header.html.twig' %}
     	{% endblock %}
     	
-        {% block body %}{% endblock %}
-        
+        {% block body %}
+        {% endblock %}
+        {% block behindFooter %}
+        	<div class="behindFooter"></div>
+        {% endblock %}
         {% block footer %}
             {% include 'footer.html.twig' %}
         {% endblock %}

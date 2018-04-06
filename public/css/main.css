@@ -45,7 +45,10 @@ footer{
 	text-align: center;
 	margin-top: 20px;
 	box-shadow: 0px -10px 10px 0px rgba(0,0,0,0.5);
-
+}
+.behindFooter{
+	height: 100px;
+	width: 100%;
 }
 p{
 	margin-bottom: 0px;
@@ -72,4 +75,21 @@ article{
 #form{
 	margin: auto;
 	width: 80%;
+}
+.infoMessage{
+	display: flex;
+	background-color: white;
+	text-align: center;
+	width: 60%;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+.infoMessage p{
+	color: #82ccdd;
+	font-size: 2rem;
+	font-weight: bold;
+	align-items: center;
+	padding: 10px;
+
 }

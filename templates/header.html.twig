@@ -40,9 +40,10 @@
 
 {% set infoMessage = app.flashes('info') %}
 {% if infoMessage is not empty %}
-<div class="container">
+<div class="infoMessage">
 	{% for message in infoMessage %}
-		<p class="bg-success p-1">{{ message }}</p>
+		<p>{{ message }}</p><br>
+		<a type="button" class="btn btn-success" href="{{ path('homepage') }}">ok</a>
 	{% endfor %}
 </div>
 {% endif %}

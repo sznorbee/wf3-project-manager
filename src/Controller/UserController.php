@@ -64,7 +64,7 @@ class UserController
            
            
            $message = new \Swift_Message();
-           $message->setFrom('wf3pm@localhost.com')
+           $message->setFrom('ooptest@norbertszekeres.eu')
                     ->setTo($user->getEmail())
                     ->setSubject('Validate your account!')
                     ->setBody
@@ -73,12 +73,13 @@ class UserController
                             (
                                 'mail/accountCreation.html.twig',
                                 ['user' => $user]
-                            )
+                            ),
+                        'text/html'
                         );
            
            $mailer->send($message);
                         
-           $session->getFlashBag()->add('info', 'Ok, you are registered');
+           $session->getFlashBag()->add('info', 'Ok, a confirmation email has been sent to complete your registration!');
            
            return new RedirectResponse($urlGenerator->generate('homepage'));
        }
@@ -112,7 +113,7 @@ class UserController
         
         $manager->flush();
         $session->getFlashBag()
-                ->add('info', 'Ok, your email is confirmed!');
+                ->add('info', 'Ok, your email is confirmed, you are registered!');
         
         return new RedirectResponse
                     (
