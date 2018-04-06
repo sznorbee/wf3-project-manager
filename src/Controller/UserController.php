@@ -104,7 +104,8 @@ class UserController
         
         if (!$user)
         {
-            throw new NotFoundHttpException('User is not exist, please register first');    
+            throw new NotFoundHttpException('User is not exist, please register first');
+         
         }
         $user->setActive(true)
         ->setEmailToken(null);
