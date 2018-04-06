@@ -3,19 +3,56 @@
 #    controller: App\Controller\DefaultController::index
 
 homepage:
-    path: /
+    path: /{_locale}
     controller: App\Controller\DefaultController::homepage
+    defaults:
+        _locale: en
+    requirements:
+        _locale: 'en|fr'
     
 add_product:
-    path: /add/product
+    path: /add/product/{_locale}
     controller: App\Controller\ProductController::addProduct
+    defaults:
+        _locale: en
+    requirements:
+        _locale: 'en|fr'
     
 register_user:
-    path: /register/user
+    path: /register/user/{_locale}
     controller: App\Controller\UserController::registerUser
+    defaults:
+        _locale: en
+    requirements:
+        _locale: 'en|fr'
 
 activate_user:
-    path: /user/activate/{token}
+    path: /user/activate/{token}/{_locale}
     controller: App\Controller\UserController::activateUser
+    defaults:
+        _locale: en
     requirements:
        token: '[a-z0-9-]+'
+       _locale: 'en|fr'
+       
+list_product:
+    path: /{_locale}/product/list/
+    controller: App\Controller\ProductController::listProduct
+    defaults:
+        _locale: en
+    requirements:
+        _locale: 'en|fr'
+
+username_available:
+    path: /username/available
+    controller: App\Controller\UserController::usernameAvailable
+    methods: ['POST']
+    
+    
+    
+    
+    
+    
+    
+    
+    

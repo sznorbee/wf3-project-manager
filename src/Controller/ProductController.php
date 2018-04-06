@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use App\Repository\ProductRepository;
 
 class ProductController
 {
@@ -29,14 +30,22 @@ class ProductController
         $product = new Product();
         $builder = $factory->createBuilder(FormType::class, $product);
         $builder->add('name', TextType::class,
-                    ['required' => false]
+                    ['required' => false,
+                     'label' => 'FORM.PRODUCT.NAME',
+                    ]
                     )
                 ->add('description', TextareaType::class,
-                    ['required' => false]
+                    ['required' => false,
+                     'label' => 'FORM.PRODUCT.DESCRIPTION',
+                    ]
                     )
-                ->add('version', TextType::class)
+                ->add('version', TextType::class,
+                    ['label' => 'FORM.PRODUCT.VERSION']
+                    )
                 ->add('submit', SubmitType::class,
-                    ['attr' => ['class' => 'btn btn-success btn-block']]);
+                    ['attr' => ['class' => 'btn btn-success btn-block'],
+                     'label' => 'FORM.PRODUCT.SUBMIT'
+                    ]);
         
         $form = $builder->getForm();
         
@@ -59,6 +68,24 @@ class ProductController
                         ['formular' => $form->createView()]
                         )
                     );
+        
+    }
+    
+    public function listProduct(
+                        Environment $twig,
+                        ProductRepository $repository
+                     
+                    )
+    {
+       
+
+        return new Response
+        (
+            $twig->render(
+                'Product\listProducts.html.twig',
+                ['product' => $repository->findAll()]
+                )
+            );
         
     }
 }

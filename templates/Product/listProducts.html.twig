@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>{{ 'PROJECT.LIST.TITLE' | trans }}</h1>
+	<section>
+	<article>
+	{% for value in product %}
+    		<div class="lorem">
+    			<h4>{{ value.name }}</h4>
+    			<p>v{{ value.version }}</p>
+    			<p>{{ value.description }}</p>
+    		</div>
+	{% endfor %}
+	</article>
+	</section>
+{% endblock %}

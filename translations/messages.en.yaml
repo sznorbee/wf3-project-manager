@@ -1,0 +1,37 @@
+HEADER.HOME: Home
+HEADER.PROJECT: Project
+HEADER.Add Project: Add Project
+HEADER.Remove Project: Remove Project
+HEADER.Edit Project: Edit Project
+HEADER.List Project: List Project
+HEADER.Register: Register
+HEADER.Login: Login
+HEADER.Logout: Logout
+HEADER.LANG:
+      EN: english
+      FR: french
+
+PROJECT:
+    ADD:
+      TITLE: Add a new project
+    LIST:
+      TITLE: List of projects
+  
+USER:
+  TITLE: Register
+
+FORM:
+  PRODUCT:
+    NAME: Project name
+    DESCRIPTION: Project description
+    VERSION: Version
+    SUBMIT: Submit
+    
+  USER:
+    NAME: User name
+    FIRST: firstname
+    LAST:  lastname
+    EMAIL: email
+    PASS: password
+    REPPASS: retype your password
+    SUBMIT: send

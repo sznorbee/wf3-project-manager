@@ -11,28 +11,40 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{{ path('homepage') }}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{ path('homepage') }}">
+            {{ 'HEADER.HOME' | trans }} <span class="sr-only">(current)</span>
+            </a>
           </li>
           <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Projects
                </a>
                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                 <a class="dropdown-item" href="{{ path('add_product') }}">Add Project</a>
-                 <a class="dropdown-item" href="#">Remove Project</a>
-                 <a class="dropdown-item" href="#">Edit Project</a>
-                 <a class="dropdown-item" href="#">List Project</a>
+                 <a class="dropdown-item" href="{{ path('add_product') }}">{{ 'HEADER.Add Project' | trans }}</a>
+                 <a class="dropdown-item" href="#">{{ 'HEADER.Remove Project' | trans }}</a>
+                 <a class="dropdown-item" href="#">{{ 'HEADER.Edit Project' | trans }}</a>
+                 <a class="dropdown-item" href="{{ path('list_product') }}">{{ 'HEADER.List Project' | trans }}</a>
                </div>
           	</li>
           	<li class="nav-item">
-        		<a class="nav-link" href="{{ path('register_user') }}">Register</a>
+        		<a class="nav-link" href="{{ path('register_user') }}">{{ 'HEADER.Register' | trans }}</a>
       		</li>
           	<li class="nav-item">
-        		<a class="nav-link" href="#">Login</a>
+        		<a class="nav-link" href="#">{{ 'HEADER.Login' | trans }}</a>
       		</li>
       		<li class="nav-item">
-        		<a class="nav-link" href="#">Logout</a>
+        		<a class="nav-link" href="#">{{ 'HEADER.Logout' | trans }}</a>
       		</li>
+      		
+      		<li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Language
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'),{'_locale':'en'}) }}">{{ 'HEADER.LANG.EN' | trans }}</a>
+                 <a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'),{'_locale':'fr'}) }}">{{ 'HEADER.LANG.FR' | trans }}</a>
+               </div>
+          	</li>
         </ul>
       </div>
 	</nav>

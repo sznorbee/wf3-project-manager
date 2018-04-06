@@ -1,0 +1,38 @@
+HEADER:
+  HOME: Accueil
+  PROJECT: Projet
+  Add Project: Ajouter un projet
+  Remove Project: Supprimer le projet
+  Edit Project: Modifier le projet
+  List Project: List des projet
+  Register: Registre
+  Login: S'identifier
+  Logout: Deconnecter
+  LANG:
+    EN: anglais
+    FR: francais
+  
+PROJECT:
+    ADD:
+      TITLE: Cree une nouvelle projet
+    LIST:
+      TITLE: List des projets
+
+USER:
+  TITLE: Enregistrer
+  
+FORM:
+  PRODUCT:
+    NAME: Le nom du projet
+    DESCRIPTION: Le description du projet
+    VERSION: Le version du projet
+    SUBMIT: Cree
+    
+  USER:
+    NAME: Nome d'utilisateur
+    FIRST: prenome
+    LAST:  nome
+    EMAIL: e-mail
+    PASS: mot de passe
+    REPPASS: confirmez votre mot de passe
+    SUBMIT: envoyer

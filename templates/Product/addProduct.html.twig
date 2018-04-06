@@ -2,6 +2,6 @@
 {% block title %}{{ parent() }}-Add Project{% endblock %}
 
 {% block body %}
-	<h1>Add a new project</h1>
+	<h1>{{ 'PROJECT.ADD.TITLE' | trans }}</h1>
 	{{ form(formular) }}
 {% endblock %}
