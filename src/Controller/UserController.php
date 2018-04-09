@@ -155,7 +155,6 @@ class UserController
         {
         $unavailable = $repository->usernameExists($username);
         }
-        
         return new JsonResponse(
                         ['available' => !$unavailable]
                    );

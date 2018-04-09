@@ -74,11 +74,8 @@ class ProductController
     public function listProduct(
                         Environment $twig,
                         ProductRepository $repository
-                     
                     )
     {
-       
-
         return new Response
         (
             $twig->render(
