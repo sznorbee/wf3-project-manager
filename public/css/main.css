@@ -1,9 +1,20 @@
 body
 {
 	background-color: #82ccdd;
+
+}
+main{
+	background-image: url('../img/animated-project-management-cogs-gif.gif');
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	min-width: 100vw;
 }
 header{
 	position: sticky;
+	height: 76px;
 	top: 0px;
 	box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.5);
 }
@@ -46,10 +57,7 @@ footer{
 	margin-top: 20px;
 	box-shadow: 0px -10px 10px 0px rgba(0,0,0,0.5);
 }
-.behindFooter{
-	height: 100px;
-	width: 100%;
-}
+
 p{
 	margin-bottom: 0px;
 }
