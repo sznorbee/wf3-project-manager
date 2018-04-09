@@ -7,3 +7,7 @@
 	<h1>{{ 'USER.TITLE' | trans }}</h1>
 	{{ form(registerUserFormular) }}
 {% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	<script src="/js/register.js"></script>
+{% endblock %}

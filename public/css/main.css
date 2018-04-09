@@ -102,3 +102,10 @@ article{
 	padding: 10px;
 
 }
+
+.username-available {
+	color:green;
+}
+.username-unavailable {
+	color:red;
+}

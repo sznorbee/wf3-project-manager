@@ -19,6 +19,9 @@ PROJECT:
   
 USER:
   TITLE: Register
+  
+LOGIN:
+  TITLE: Login
 
 FORM:
   PRODUCT:

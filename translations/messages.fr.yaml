@@ -7,7 +7,7 @@ HEADER:
   List Project: List des projet
   Register: Registre
   Login: S'identifier
-  Logout: Deconnecter
+  Logout: Deconnexion
   LANG:
     EN: anglais
     FR: francais
@@ -20,6 +20,9 @@ PROJECT:
 
 USER:
   TITLE: Enregistrer
+  
+LOGIN:
+  TITLE: Connection
   
 FORM:
   PRODUCT:
