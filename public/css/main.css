@@ -87,6 +87,7 @@ article{
 }
 .infoMessage{
 	display: flex;
+	flex-direction: column;
 	background-color: white;
 	text-align: center;
 	width: 60%;
