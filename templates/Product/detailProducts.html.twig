@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>{{ product.name }}</h1>
+	
+	<div class="lorem">
+	
+	<p 
+	class="version
+    	{% if product.version <= 1 %}
+    		version-dev
+    	{% endif %}
+	">V{{ product.version }}</p>
+	
+	<p>{{ product.description }}</p>
+	</div>
+	
+	<a type="button" href="{{ path('list_product') }}" class="btn btn-success btn-block">Return to project list</a>
+	
+	
+{% endblock %}

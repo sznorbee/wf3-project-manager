@@ -43,6 +43,14 @@ list_product:
     requirements:
         _locale: 'en|fr'
 
+detail_product:
+    path: /{_locale}/product/detail/
+    controller: App\Controller\ProductController::detailProduct
+    defaults:
+        _locale: en
+    requirements:
+        _locale: 'en|fr'
+
 username_available:
     path: /username/available
     controller: App\Controller\UserController::usernameAvailable

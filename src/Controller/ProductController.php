@@ -85,5 +85,22 @@ class ProductController
             );
         
     }
+    
+    
+    public function detailProduct
+                    ( Environment $twig,
+                      ProductRepository $repository
+                    )
+    {
+        $idProduct = $_GET['id'];
+        return new Response
+        (
+            $twig->render
+                   (
+                      'Product\detailProducts.html.twig',
+                       ['product' => $repository->findOneById($idProduct)]
+                   )
+        );
+    }
 }
 

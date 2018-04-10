@@ -109,3 +109,24 @@ article{
 .username-unavailable {
 	color:red;
 }
+.version{
+	background-color: green;
+  padding: 6px;
+  border-radius: 5px;
+  display: inline-block;
+}
+.version{
+  background-color: green;
+	color: white;
+  padding: 6px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.version-dev{
+  background-color: red;
+	color: white;
+  padding: 6px;
+  border-radius: 5px;
+  display: inline-block;
+}

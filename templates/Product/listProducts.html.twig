@@ -7,8 +7,14 @@
 	{% for value in product %}
     		<div class="lorem">
     			<h4>{{ value.name }}</h4>
-    			<p>v{{ value.version }}</p>
+    			<p 
+    				class="version 
+                	{% if value.version <= 1 %}
+                		version-dev
+                	{% endif %}
+    			">v{{ value.version }}</p>
     			<p>{{ value.description }}</p>
+    			<a id="{{ value.id }}" type="button" href="{{ path('detail_product') }}?id={{ value.id }}" class="btn btn-success btn-block">details</a>
     		</div>
 	{% endfor %}
 	</article>
