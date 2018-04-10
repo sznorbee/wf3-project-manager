@@ -39,3 +39,6 @@ FORM:
     PASS: mot de passe
     REPPASS: confirmez votre mot de passe
     SUBMIT: envoyer
+
+PRODUCT:
+    DOWNLOAD: telecharger

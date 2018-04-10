@@ -22,13 +22,22 @@
         		<p>{{ comment.getAuthor().getUsername() }}</p>
         		<p>{{ comment.getComment() }}</p>
         		{% for file in comment.getFiles() %}
-        			<img alt="comment img" src="{{ file.getFileUrl() }}">
+        			
+        			{% if file.getMimeType() | slice(0, 6) =='image/' %}
+        				<img alt="comment img" src="{{ file.getFileUrl() }}">
+        			{% else %}
+        				<a type="button" class="btn btn-success btn-block" href="{{ file.getFileUrl() }}">{{ 'PRODUCT.DOWNLOAD' | trans}}:_{{ file.getName() }}</a>
+        			{% endif %}
+        			
         	    {% endfor %}
     	    </div>
     	    
     	{% endfor %}
 
 	</div>
+	<div >
+	{{ form(form) }}
+	</div>
 	
-	
+<div class="behindfooter"></div>	
 {% endblock %}

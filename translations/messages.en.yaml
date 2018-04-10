@@ -38,3 +38,6 @@ FORM:
     PASS: password
     REPPASS: retype your password
     SUBMIT: send
+
+PRODUCT:
+    DOWNLOAD: download
