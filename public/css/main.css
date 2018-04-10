@@ -77,7 +77,15 @@ article{
 	border-radius: 5px;
 	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
-
+.comment{
+	background-color: #82ccdd;
+	width: 80%;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
 .dropdown-menu{
 	background-color: #82ccdd;
 }

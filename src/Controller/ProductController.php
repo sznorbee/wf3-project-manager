@@ -86,7 +86,6 @@ class ProductController
         
     }
     
-    
     public function detailProduct
                     ( Environment $twig,
                       ProductRepository $repository
@@ -102,5 +101,7 @@ class ProductController
                    )
         );
     }
+    
+   
 }
 
