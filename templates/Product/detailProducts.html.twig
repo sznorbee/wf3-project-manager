@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>{{ product.name }}</h1>
+	
+	<a type="button" href="{{ path('list_product') }}" class="btn btn-success btn-block">Return to project list</a>
+	
+	<div class="lorem">
+	<p 
+	class="version
+    	{% if product.version <= 1 %}
+    		version-dev
+    	{% endif %}">V{{ product.version }}</p>
+	
+	<p>{{ product.description }}</p>
+	</div>
+	<div class="lorem">
+	
+    	{% for comment in product.getComments() %}
+    	
+    		<div class="comment">
+        		<p>{{ comment.getAuthor().getUsername() }}</p>
+        		<p>{{ comment.getComment() }}</p>
+        		{% for file in comment.getFiles() %}
+        			
+        			{% if file.getMimeType() | slice(0, 6) =='image/' %}
+        				<img alt="comment img" src="{{ file.getFileUrl() }}">
+        			{% else %}
+        				<a type="button" class="btn btn-success btn-block" href="{{ file.getFileUrl() }}">{{ 'PRODUCT.DOWNLOAD' | trans}}:_{{ file.getName() }}</a>
+        			{% endif %}
+        			
+        	    {% endfor %}
+    	    </div>
+    	    
+    	{% endfor %}
+
+	</div>
+	<div >
+	{{ form(form) }}
+	</div>
+	
+<div class="behindfooter"></div>	
+{% endblock %}

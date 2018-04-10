@@ -20,22 +20,28 @@
                   Projects
                </a>
                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                 <a class="dropdown-item" href="{{ path('add_product') }}">{{ 'HEADER.Add Project' | trans }}</a>
-                 <a class="dropdown-item" href="#">{{ 'HEADER.Remove Project' | trans }}</a>
-                 <a class="dropdown-item" href="#">{{ 'HEADER.Edit Project' | trans }}</a>
-                 <a class="dropdown-item" href="{{ path('list_product') }}">{{ 'HEADER.List Project' | trans }}</a>
+                 {% if is_granted('ROLE_ACTIVE') %}
+                     <a class="dropdown-item" href="{{ path('add_product') }}">{{ 'HEADER.Add Project' | trans }}</a>
+                     <a class="dropdown-item" href="#">{{ 'HEADER.Remove Project' | trans }}</a>
+                     <a class="dropdown-item" href="#">{{ 'HEADER.Edit Project' | trans }}</a>
+                 {% endif %}
+                 	<a class="dropdown-item" href="{{ path('list_product') }}">{{ 'HEADER.List Project' | trans }}</a>
+               
                </div>
           	</li>
-          	<li class="nav-item">
+          	
+      		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          		<li class="nav-item">
+            		<a class="nav-link" href="{{ path('logout') }}">{{ 'HEADER.Logout' | trans }}</a>
+          		</li>
+      		{% else %}
+      			<li class="nav-item">
         		<a class="nav-link" href="{{ path('register_user') }}">{{ 'HEADER.Register' | trans }}</a>
-      		</li>
-          	<li class="nav-item">
-        		<a class="nav-link" href="#">{{ 'HEADER.Login' | trans }}</a>
-      		</li>
-      		<li class="nav-item">
-        		<a class="nav-link" href="#">{{ 'HEADER.Logout' | trans }}</a>
-      		</li>
-      		
+      			</li>
+          		<li class="nav-item">
+        		<a class="nav-link" href="{{ path('login') }}">{{ 'HEADER.Login' | trans }}</a>
+      			</li>
+      		{% endif %}
       		<li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Language

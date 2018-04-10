@@ -19,6 +19,9 @@ PROJECT:
   
 USER:
   TITLE: Register
+  
+LOGIN:
+  TITLE: Login
 
 FORM:
   PRODUCT:
@@ -35,3 +38,6 @@ FORM:
     PASS: password
     REPPASS: retype your password
     SUBMIT: send
+
+PRODUCT:
+    DOWNLOAD: download

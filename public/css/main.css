@@ -57,6 +57,9 @@ footer{
 	margin-top: 20px;
 	box-shadow: 0px -10px 10px 0px rgba(0,0,0,0.5);
 }
+.behindfooter{
+	height: 100px;
+}
 
 p{
 	margin-bottom: 0px;
@@ -77,7 +80,15 @@ article{
 	border-radius: 5px;
 	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
-
+.comment{
+	background-color: #82ccdd;
+	width: 80%;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
 .dropdown-menu{
 	background-color: #82ccdd;
 }
@@ -102,4 +113,32 @@ article{
 	align-items: center;
 	padding: 10px;
 
+}
+
+.username-available {
+	color:green;
+}
+.username-unavailable {
+	color:red;
+}
+.version{
+	background-color: green;
+  padding: 6px;
+  border-radius: 5px;
+  display: inline-block;
+}
+.version{
+  background-color: green;
+	color: white;
+  padding: 6px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.version-dev{
+  background-color: red;
+	color: white;
+  padding: 6px;
+  border-radius: 5px;
+  display: inline-block;
 }

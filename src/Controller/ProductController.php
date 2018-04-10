@@ -16,6 +16,8 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use App\Repository\ProductRepository;
+use App\Entity\Comment;
+use App\Form\CommentType;
 
 class ProductController
 {
@@ -74,11 +76,8 @@ class ProductController
     public function listProduct(
                         Environment $twig,
                         ProductRepository $repository
-                     
                     )
     {
-       
-
         return new Response
         (
             $twig->render(
@@ -88,5 +87,36 @@ class ProductController
             );
         
     }
+    
+    public function detailProduct
+                    ( Environment $twig,
+                      ProductRepository $repository,
+                      FormFactoryInterface $factory
+                    )
+    {
+        $idProduct = $_GET['id'];
+        
+        $comment = new Comment();
+        $form = $factory->create
+                            (
+                                CommentType::class,
+                                $comment,
+                                ['stateless' => true]
+                             );
+        
+        return new Response
+        (
+            $twig->render
+                   (
+                      'Product\detailProducts.html.twig',
+                       ['product' => $repository->findOneById($idProduct),
+                         'form' => $form->createView()
+                       ]
+                       
+                   )
+        );
+    }
+    
+   
 }
 
