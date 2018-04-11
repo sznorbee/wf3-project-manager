@@ -36,8 +36,12 @@
 
 	</div>
 	<div >
-	{{ form(form) }}
+	{{ form(formFile) }}
 	</div>
 	
-<div class="behindfooter"></div>	
+	<div class="behindfooter"></div>	
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	<script src="/js/CommentFileAdder.js" type="text/javascript">></script>
 {% endblock %}

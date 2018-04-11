@@ -50,6 +50,7 @@ detail_product:
         _locale: en
     requirements:
         _locale: 'en|fr'
+        
 
 username_available:
     path: /username/available
