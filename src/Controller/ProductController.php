@@ -110,7 +110,7 @@ class ProductController
                    (
                       'Product\detailProducts.html.twig',
                        ['product' => $repository->findOneById($idProduct),
-                         'form' => $form->createView()
+                         'formFile' => $form->createView()
                        ]
                        
                    )
